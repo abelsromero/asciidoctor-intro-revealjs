@@ -1,0 +1,89 @@
+= Asciidoctor: what, how and why
+Abel Salgado Romero (@abelsromero)
+:icons: font
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/java]
+
+== About me
+
+image::about_me.png[scaledwidth=50%]
+
+* Tech Lead at everis
+* "Janitor" of the `asciidoctor-maven-plugin`
+
+== What is it then?
+
+[quote]
+____
+Asciidoctor is a fast text processor and publishing toolchain for converting AsciiDoc content to HTML5, DocBook, PDF, and other formats.
+____
+
+[%notitle]
+== What is it then?
+
+image::00_what_is_it.png[scaledwidth=75%]
+
+== How can I run it?
+
+image::01_ecosystem.png[scaledwidth=75%]
+
+== Show me the code
+
+image::show_me_the_code.jpg[]
+
+[NOTE.speaker]
+--
+- code formatting
+- Admonitions
+- links
+- substitutions/attributes
+- tables
+- cross references
+- diagrams
+--
+
+== Is that all there is?
+
+*Custom extensions!!!*
+
+[source, Asciidoc]
+.Make text BIG again
+----
+[BIG]
+Hello, World!
+----
+
+[source,groovy]
+----
+AsciidoctorExtensions.extensions {
+  block(name: 'BIG', contexts: [':paragraph']) {
+    parent, reader, attributes ->
+      def upperLines = reader.readLines()
+        .collect {it.toUpperCase()}
+        .inject('') {a, b -> a + '\n' + b}
+
+        createBlock(parent, 'paragraph',
+                    [upperLines], attributes, [:])
+    }
+}
+
+Asciidoctor.Factory.create().renderFile('mydocument.ad', [:])
+----
+
+== Why you should use it?
+
+[%step]
+* It's easy, quick and semantic (no WYSIWYG distractions)
+* Helps keeping your docs up to date with your code
+* Asciidoctor + Git > Can replace collaboration platforms
+
+== Final thoughts
+
+[%step]
+* Write your docs as your code, it can be fun!
+* If you want to know more -> https://asciidoctor.org/, http://discuss.asciidoctor.org or go directly to the GitHub repos
+* Try it out as you wish -> Ruby, Java, JavaScript
+
+== Questions
+
+image::questions.jpg[background, size=cover]

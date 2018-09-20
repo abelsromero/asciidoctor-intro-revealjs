@@ -1,0 +1,81 @@
+= Asciidoctor quick demo
+//:source-highlighter: coderay
+//:icons: font
+:stem:
+:pending: pass:normal[[.red]#*PENDING*#]
+:class-name: SubscriptionHandlerControllerVisitor
+
+== Document structure
+
+== Basic formatting
+
+bold
+
+italics
+
+both?
+
+monospace
+
+extra: roles
+
+helo[role=green]
+
+Do werewolves believe in [small]#small print#?
+
+== Lists
+
+*
+
+.
+
+=== Nested
+
+
+== Source code blocks
+
+
+== Admonitions
+
+== Substitutions and attributes
+
+Can you can a can as a canner can can a can?
+
+== Tables
+
+== Http links
+
+== Includes
+
+== Toc
+
+== Numbered titles
+
+== Advanced features with extension
+
+== AsciiMath
+
+asciimath:[sqrt(4) = 2]
+
+
+== Diagrams
+
+[ditaa]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....

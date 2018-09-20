@@ -1,0 +1,2 @@
+I am a text that comes from another document.
+And I am placed in another sub-directory.
